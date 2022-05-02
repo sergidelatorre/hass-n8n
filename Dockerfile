@@ -1,11 +1,11 @@
-FROM node:14.15-alpine
+FROM node:12.13.0-alpine
 
 ARG N8N_VERSION=0.156.0
 
 RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
 # Update everything and install needed dependencies
-RUN apk add --update graphicsmagick tzdata git su-exec jq
+RUN apk add --update graphicsmagick tzdata
 
 # # Set a custom user to not have n8n run as root
 USER root
