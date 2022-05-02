@@ -4,7 +4,7 @@ ARG N8N_VERSION=0.175.0
 
 RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
-RUN apk add --no-cache wget
+RUN apk update && apk add --no-cache wget
 RUN wget http://ftp.debian.org/debian/pool/main/libs/libseccomp/libseccomp-dev_2.5.4-1_armhf.deb
 
 RUN sudo dpkg -i libseccomp2_2.5.5-1_armhf.deb
