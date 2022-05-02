@@ -4,6 +4,11 @@ ARG N8N_VERSION=0.175.0
 
 RUN if [ -z "$N8N_VERSION" ] ; then echo "The N8N_VERSION argument is missing!" ; exit 1; fi
 
+RUN wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.3-2_armhf.deb
+
+RUN sudo dpkg -i libseccomp2_2.5.3-2_armhf.deb
+
+
 # Update everything and install needed dependencies
 RUN apk add --update graphicsmagick tzdata
 
