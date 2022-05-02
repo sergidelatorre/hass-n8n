@@ -1,4 +1,4 @@
-FROM node:12.13.0-alpine
+FROM node:16-alpine
 
 ARG N8N_VERSION=0.175.0
 
